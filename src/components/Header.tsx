@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 function Header() {
   // ts 자리
 
-  // tsx 자리s
+  // tsx 자리
   return (
     <header className="border-b border-neutral-200 dark:border-neutral-800">
       <div className="container-app flex items-center py-6">

@@ -7,13 +7,17 @@ type TodoWriteProps = {
 };
 
 function TodoWrite({ setTodos, handleTodoUpdate }: TodoWriteProps): JSX.Element {
-  // ts 자리
   const [title, setTitle] = useState<string>('');
-  // tsx 자리
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
   };
+
+  // 수정된 부분: isComposing 확인 추가
   const handleKeyDown = (e: React.KeyboardEvent) => {
+    // 한글 입력 중(조합 중)이면 실행하지 않음
+    if (e.nativeEvent.isComposing) return;
+
     if (e.key === 'Enter' && title.trim()) {
       const newTodo: TodoType = {
         id: Date.now().toString(),
@@ -23,8 +27,10 @@ function TodoWrite({ setTodos, handleTodoUpdate }: TodoWriteProps): JSX.Element 
       setTodos(prevTodos => [...prevTodos, newTodo]);
       handleTodoUpdate(newTodo);
       setTitle('');
+      console.log('할 일 추가:', newTodo);
     }
   };
+
   const handleAdd = () => {
     if (title.trim()) {
       const newTodo: TodoType = {
@@ -37,6 +43,7 @@ function TodoWrite({ setTodos, handleTodoUpdate }: TodoWriteProps): JSX.Element 
       setTitle('');
     }
   };
+
   return (
     <div className="flex items-center gap-2">
       <h2>할 일 추가</h2>
