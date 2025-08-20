@@ -38,7 +38,7 @@ function TodoWrite({ setTodos, handleTodoUpdate }: TodoWriteProps): JSX.Element 
     }
   };
   return (
-    <div>
+    <div className="flex items-center gap-2">
       <h2>할 일 추가</h2>
       <input
         type="text"
@@ -46,8 +46,14 @@ function TodoWrite({ setTodos, handleTodoUpdate }: TodoWriteProps): JSX.Element 
         onChange={handleChange}
         onKeyDown={handleKeyDown}
         placeholder="할 일을 입력하세요"
+        className="flex-1 rounded-lg border border-neutral-300 bg-white px-3 py-2 outline-none focus:ring-2 focus:ring-brand dark:border-neutral-700 dark:bg-neutral-900"
       />
-      <button onClick={handleAdd}>추가</button>
+      <button
+        onClick={handleAdd}
+        className="px-y rounded-lg bg-brand py-2 text-white hover:opacity-90 active:opacity-80"
+      >
+        추가
+      </button>
     </div>
   );
 }
