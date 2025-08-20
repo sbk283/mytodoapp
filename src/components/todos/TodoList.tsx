@@ -14,9 +14,9 @@ function TodoList({ todos, onToggle, onDelete, onEdit }: TodoItemProps): JSX.Ele
 
   return (
     <div>
-      <h2>Todo 현황</h2>
+      <h2 className="text-xl font-semibold">TODO LIST</h2>
       {todos.length === 0 ? (
-        <p>할 일이 없습니다.</p>
+        <p className="mt-3 text-neutral-500">목록이 없습니다.</p>
       ) : (
         <ul>
           {todos.map(todo => (

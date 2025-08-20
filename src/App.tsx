@@ -30,9 +30,9 @@ function App(): JSX.Element {
 
   // tsx 자리
   return (
-    <div>
+    <div className="min-h-screen bg-neutral-50 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100">
       <Header />
-      <main>
+      <main className="container-app py-8">
         <TodoWrite setTodos={setTodos} handleTodoUpdate={handleTodoUpdate} />
         <TodoList todos={todos} onToggle={onToggle} onDelete={onDelete} onEdit={onEdit} />
       </main>
