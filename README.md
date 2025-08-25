@@ -6,8 +6,7 @@
 
 - 투두 생성/읽기/수정/삭제
 - 완료/미완료 토글, 필터링
-- 상세 보기, 인라인/페이지 편집
-- 기본 환경설정 페이지(테마, 리스트 정렬 등 확장 여지)
+- 기본 환경설정 페이지(테마, 리스트 정렬 등 확장 여지) // 미구현
 
 ## 기술 스택
 
@@ -60,14 +59,14 @@ my-todo-app/
 └─ tsconfig.json
 ```
 
-## 라우팅 구조
-| Path              | Page           | 설명           |
-| ----------------- | -------------- | ------------ |
-| `/`               | Home           | 앱 소개 혹은 바로가기 |
-| `/todos`          | TodoListPage   | 목록/필터/정렬     |
-| `/todos/write`    | TodoWritePage  | 새 투두 작성      |
-| `/todos/:id`      | TodoDetailPage | 상세 보기        |
-| `/todos/:id/edit` | TodoEditPage   | 수정           |
-| `/settings`       | Settings       | 테마 등 기본 설정   |
-| `*`               | NotFound       | 404          |
+## 라우팅 구조 / 미구현
 
+| Path              | Page           | 설명                  |
+| ----------------- | -------------- | --------------------- |
+| `/`               | Home           | 앱 소개 혹은 바로가기 |
+| `/todos`          | TodoListPage   | 목록/필터/정렬        |
+| `/todos/write`    | TodoWritePage  | 새 투두 작성          |
+| `/todos/:id`      | TodoDetailPage | 상세 보기             |
+| `/todos/:id/edit` | TodoEditPage   | 수정                  |
+| `/settings`       | Settings       | 테마 등 기본 설정     |
+| `*`               | NotFound       | 404                   |

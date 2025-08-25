@@ -24,8 +24,8 @@ function TodoItem({ todo, onToggle, onDelete, onEdit }: TodoItemProps): JSX.Elem
     if (event.nativeEvent.isComposing) return;
 
     if (event.key === 'Enter') {
-      event.preventDefault(); // 기본 동작 방지
-      event.stopPropagation(); // 이벤트 버블링 방지
+      event.preventDefault(); // 엔터로 입력칸 채우는거 방지
+      event.stopPropagation(); // 마지막 글자 중복 입력 방지
 
       if (editTitle.trim()) {
         onEdit(todo.id, editTitle.trim());
@@ -71,7 +71,7 @@ function TodoItem({ todo, onToggle, onDelete, onEdit }: TodoItemProps): JSX.Elem
             // 수정 모드 진입 시 자동 포커스
           />
           <button
-            onClick={handleEditSave} // onClick으로 변경
+            onClick={handleEditSave}
             className="rounded-md bg-brand px-3 py-1 text-white hover:opacity-90"
           >
             저장
